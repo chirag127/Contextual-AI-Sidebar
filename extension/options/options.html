@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextual AI Sidebar - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>Contextual AI Sidebar Settings</h1>
+      <p class="subtitle">Configure your extension preferences</p>
+    </header>
+
+    <main class="options-content">
+      <section class="settings-section">
+        <h2>API Key Settings</h2>
+        <div class="form-group">
+          <label for="api-key">Gemini API Key</label>
+          <div class="input-with-button">
+            <input type="password" id="api-key" placeholder="Enter your Gemini API key">
+            <button id="toggle-api-key" class="icon-button" title="Show/Hide API Key">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+          <p class="help-text">Your API key is stored securely in your browser and is only sent to the Gemini API when making requests.</p>
+          <p class="help-text">Don't have an API key? <a href="https://ai.google.dev/" target="_blank">Get one from Google AI Studio</a></p>
+        </div>
+        <div class="form-group">
+          <label for="backend-url">Backend URL</label>
+          <input type="text" id="backend-url" placeholder="Enter backend URL">
+          <p class="help-text">The URL of the backend server that processes your requests. Leave as default unless you're hosting your own backend.</p>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Text-to-Speech Settings</h2>
+        <div class="form-group">
+          <label for="tts-voice">Voice</label>
+          <select id="tts-voice">
+            <!-- Voice options will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tts-speed">Speed: <span id="speed-value">1.0</span>x</label>
+          <input type="range" id="tts-speed" min="0" max="16" step="1" value="8">
+          <div class="range-labels">
+            <span>Slower</span>
+            <span>Faster</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tts-pitch">Pitch: <span id="pitch-value">1.0</span></label>
+          <input type="range" id="tts-pitch" min="0" max="20" step="1" value="10">
+          <div class="range-labels">
+            <span>Lower</span>
+            <span>Higher</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tts-volume">Volume: <span id="volume-value">1.0</span></label>
+          <input type="range" id="tts-volume" min="0" max="10" step="1" value="10">
+          <div class="range-labels">
+            <span>Quieter</span>
+            <span>Louder</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <button id="test-tts" class="primary-button">Test Voice</button>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>History Settings</h2>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="history-enabled" checked>
+          <label for="history-enabled">Enable Q&A History</label>
+          <p class="help-text">When enabled, your questions and answers will be saved locally in your browser for future reference.</p>
+        </div>
+        <div class="form-group">
+          <button id="clear-history" class="danger-button">Clear All History</button>
+          <p class="help-text">This will permanently delete all saved Q&A history.</p>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>About</h2>
+        <div class="about-content">
+          <p>Contextual AI Sidebar v1.0.0</p>
+          <p>Created by Chirag Singhal</p>
+          <p>This extension allows you to ask questions about webpage content using the Gemini AI.</p>
+          <p><a href="https://github.com/chirag127/Contextual-AI-Sidebar" target="_blank">GitHub Repository</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="options-footer">
+      <div id="status-message" class="status-message"></div>
+      <button id="save-settings" class="primary-button">Save Settings</button>
+    </footer>
+  </div>
+
+  <script src="../utils/tts-handler.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
