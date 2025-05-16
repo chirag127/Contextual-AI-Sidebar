@@ -4,7 +4,7 @@ let pageUrl = "";
 let pageTitle = "";
 let ttsHandler = null;
 let historyEnabled = true;
-let backendUrl = "https://contextual-ai-sidebar-backend.onrender.com"; // Default backend URL, can be changed in settings
+let  = "https://contextual-ai-sidebar-backend.onrender.com"; // Default backend URL, can be changed in settings
 
 // DOM Elements
 const questionInput = document.getElementById("question-input");
